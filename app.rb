@@ -4,6 +4,9 @@ require 'sinatra/reloader' if development?
 
 require './models/count.rb'
 
+set :bind, '192.168.33.10'
+set :port, 3000
+
 before do
   if Count.all.size == 0
     Count.create(number: 0)
